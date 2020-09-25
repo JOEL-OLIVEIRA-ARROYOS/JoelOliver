@@ -9,7 +9,7 @@
         $Model->setEmail($_POST["Email"]);
         $Model->setMensagem($_POST["Mensagem"]);
         $Model->Enviar();
-        header("Location: www.joeloliver.com.br");
+        header("Location: ../index.html");
         exit();
     }
 
