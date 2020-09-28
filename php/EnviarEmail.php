@@ -35,17 +35,17 @@
             if($this->getEmail() != "")
             {
                 $mensagemHTML       = " \*\*\*\Hidden\*\*\*\ ";
-                $headers            = 'From: ' . addslashes($this->getContato()) . "\r\n";
+                $headers            = 'From: ' . addslashes($this->getEmail()) . "\r\n";
                 $headers            .= 'Return-path: \*\*\*\Hidden\*\*\*\ ' . "\r\n"; 
                 $headers            .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
                 $emailsender        = " \*\*\*\Hidden\*\*\*\ ";
-                $quebra_linha       = "\r\n";
+                $ql                 = "\r\n";
                 $assunto            = "Novo contato via site.";
                 $emaildestinatario  = "Hidden";
 
                 if(!mail($emaildestinatario, $assunto, $mensagemHTML, $headers ,"-r".$emailsender))
                 { 
-                    $headers .= "Return-Path: " . $emailsender . $quebra_linha; 
+                    $headers .= "Return-Path: " . $emailsender . $ql; 
                     mail($emaildestinatario, $assunto, $mensagemHTML, $headers );
                 }    
             }            
